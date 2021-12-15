@@ -9,7 +9,7 @@ public class test_chromeTest {
 	@Test
 	public void browser() {
 		
-		System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver","/home/ec2-user/chromedriver");
 		WebDriver driver = new ChromeDriver();
     	
         String baseUrl = "https://www.Youtube.com";
