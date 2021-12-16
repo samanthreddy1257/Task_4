@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+     tools {
+        maven 'MAVEN_HOME'
+    }
+    stages {
+        stage('checkout source code') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [['credentialsId: '88418798-9f02-4646-8040-379c35cb945f', url: 'https://github.com/samanthreddy1257/Task_4.git']]])
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+    }
+}
